@@ -1,0 +1,96 @@
+// #####################################################################
+// css renderd heart
+// taken from css tricks @  https://css-tricks.com/hearts-in-html-and-css/
+
+
+
+.heart {
+  background-color: @colorBrandPink;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+
+  &:before,
+  &:after {
+    content: "";
+    background-color: @colorBrandPink;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+
+  &:before {
+    top: -15px;
+    left: 0;
+  }
+
+  &:after {
+    left: 15px;
+    top: 0;
+  }
+}
+
+.heartout--line { 
+
+    display: block;
+    // use base64bg to reduce server overhead as much as possible
+    background: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMsaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0OCA3OS4xNjQwMzYsIDIwMTkvMDgvMTMtMDE6MDY6NTcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MjY1NUFCNzA2N0ExMUVCOUQzODk5Rjg1RjMwQTMwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MjY1NUFCODA2N0ExMUVCOUQzODk5Rjg1RjMwQTMwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyNjU1QUI1MDY3QTExRUI5RDM4OTlGODVGMzBBMzBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyNjU1QUI2MDY3QTExRUI5RDM4OTlGODVGMzBBMzBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgALwA1AwERAAIRAQMRAf/EAJMAAQEBAAIDAAAAAAAAAAAAAAYABQIEAQcIAQADAQEBAQAAAAAAAAAAAAAAAQUEAgMGEAABAgQCBgcHBQAAAAAAAAABAgQAEQMFIRIxQWEyEwZRccEiQrIUgaFykiMWB9FSYiQXEQABAwEFBgQHAQAAAAAAAAAAAQIEA/ARIUESMYGxMhMUUWFx0aHB4fEiYgUj/9oADAMBAAIRAxEAPwD6V5h5hZ2Rl6iuCuos5aFFJkpauwDWYaIaokR1d1yb1DVFz+RLwgOW3CtzZeNNKwASNR7yVr9uEGBTcyHR/F173W9EJV+5xsFRK73RS9YKMlV6QSCn2pCR8wx6YASLGrp/kul/gtuB3rn+QLeihSRakF89cAGlSAMkk4SWBjm/iILjwofynqq9T8WpaynUS2/JrlPHLqi2nimgRTmNmCF+8wYHqr4LcLld54+6HJlzhdrY8Sx5mb8LPhTeIAy9Zl3SNqdHRBcKp/Pp1W66C3+QzzJy5pjLKebVLphEa4D0qIvnP7gOu+1tafpUju5kEDEfGSqHkXHO6ERNPM+3AcwiEcatKnVpqp1UhdNYKVoUJgg6QQYBtcqLem0ybNypZrQ4quGlNXFqzkqoc2RJ8KMMB74d5rkT6lZqNcuCfH1NiEYzM5jtFC62iu1qCa8pXRVrTUSDlPYdkNDVDkLSqI5N/oBvuB5/nnDzniBx6HPPHhFHEl8vd6od2Jc7RveX5adW/Z9TSq1vt7nuo4cjKwuqZCsdCSrLMn4VjHYYWRma3uIiNbzstwHQM8RohEIoAKACgAyOab1RtNorVlH61RJpt0aytQlPqTpMNDZBjLVqImSbQj9sPP8AP5ZD6njev4Xiy5ckvk70od+JX71vefrdp+fHAaX2xs7ywU0ciR3qVUbyF6iO0RyhEiyXUX6mhexX19YHwsN+MqIwZvDuhOgYnweXQdnSlWVFbIb1aW3NLZ8RyDPEaI5IRQAZ98vjKzslOnStlKkN5augdpgNEaM6s7S37BWyWV/zG/Tfb4JNQZs2nhKQZjD9nm6oZVkyWR2dKlzZrbPgOoRCKADOvtiZXlkWzkSUMaNYbyFdI7RBeaYsp1F2pu9PEL2K+vrA+FhvxlRGDN4d0J0Caj4PLoOxlSVFbIb1aW3NLZ8RTe74xs7EunKpzwpUhvVFdCf1hEqNGdWdpb9grZLI+5jfC+Xwf1RizZndKdIwPg83VDKsmSyMzpUubNbZ8B0AAAAJAaBCIRQAUAFABjc0MbG9YhvdK9JsVTLavUWlCkrGtOYie0Q0NsKrVY++miu8UCls5bo03lCrzJc262tBIFvpLrpKatMGaVDMR3Nmvqh3lWtMVWqlBjtS82Gxfc9hpy5RllllhLRKOT51TzABQAf/2Q==');
+    background-size: 100%;    
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 30px;
+    height: 50px; 
+    }
+      
+ 
+
+// stars renderd in css using content property method mixed to a variable
+// method source: https://css-tricks.com/five-methods-for-five-star-ratings/
+
+.star {
+  align-items: center; 
+  display: inline-block;
+  font-size: 1.5rem; 
+  color: @colorTransparent;
+}
+
+.star__one {
+  .star; 
+  &:before {
+    color: @colorBrandPink;
+    content: "★ ";
+  }
+}
+.star__two {
+  .star; 
+  &:before {
+    color: @colorBrandPink;
+    content: "★★ ";
+  }
+}
+.star__three {
+  .star;
+  &:before {
+    color: @colorBrandPink;
+    content: "★★★ ";
+  }
+}
+.star__four {
+  .star;
+  &:before {
+    color: @colorBrandPink;
+    content: "★★★★ ";
+  }
+}
+.star__five {
+  .star;
+  &:before {
+    color: @colorBrandPink;
+    content: "★★★★★  ";
+  }
+}

@@ -1,0 +1,68 @@
+// utilities and variables for functional css /  drop-in classes for rendering layout and theme/brand styling
+
+@colorTransparent: transparent;
+@colorBrandPink: #cc5476;
+@colorNeutralBright: #ffffff;
+@colorNeutralDark: #000000;
+
+// simplified theme colors
+@brandPrimary: #3a376b;
+@brandSecondary: #c64777;
+@brandFinePrint: #333333;
+@brandOldPrice: #9896a4;
+
+// simplified theme  typography sizes
+@brandFontFamily: monospace;
+@copyBody: 0.9rem;
+@copyTitle: 1.1rem;
+@copyFineprint: 0.8rem;
+@copySale: 1.5rem;
+
+.utlity {
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 1.0rem;
+  }
+
+  &__link--wrap{
+      text-decoration: none;
+  }
+}
+
+.flex--gap--10 {
+  gap: 10px;
+}
+.flex--gap--20 {
+  gap: 20px;
+}
+.flex--gap--30 {
+  gap: 30px;
+}
+
+.typography__sale {
+        font-family: @brandFontFamily;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 1;
+    }
+
+
+.typography { 
+
+  &--color {
+    &--primary {
+      color: @brandPrimary;
+    }
+
+    &--secondary {
+      color: @brandSecondary;
+    }
+
+    &--tertiary {
+      color: @brandFinePrint;
+    }
+  }
+} 

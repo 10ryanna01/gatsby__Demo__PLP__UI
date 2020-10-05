@@ -1,0 +1,114 @@
+/* start styles for Ecard */
+
+.PLP {
+  // introduce PLP wrapper for all things PLP specific
+ 
+  &__Ecard {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+
+    .typography__sale;
+
+    &__image {
+      position: relative;
+
+      img {
+        min-width: 100%;
+        margin-bottom: 0;
+        // scale this image for this example build, we could also use a src set to replace at various breakpoints
+      }
+      &__fav {
+        width: 50px;
+        height: 50px;
+        padding-top: 12px;
+        position: absolute;
+        background-color: @colorNeutralBright;
+        right: 10px;
+        top: 10px;
+        border-radius: 50%;
+        display: block;
+        transform: scale(0.8);
+
+        [data-fav="true"] {
+          .heart;
+          transform: scale(0.6) rotate(-45deg);
+        }
+
+        [data-fav="false"] {
+          .heartout--line;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      // close fav
+    }
+
+    &__title {
+      margin-bottom: 0.5rem;
+      &:first-letter {
+        text-transform: uppercase;
+      }
+      font-size: @copyTitle;
+      color: @brandPrimary;
+    }
+
+    &__size {
+      font-size: @copyBody;
+      color: @brandFinePrint;
+    }
+    &__rating {
+      [data-rating="1"] {
+        .star__one;
+      }
+      [data-rating="2"] {
+        .star__two;
+      }
+      [data-rating="3"] {
+        .star__three;
+      }
+      [data-rating="4"] {
+        .star__four;
+      }
+      [data-rating="5"] {
+        .star__five;
+      }
+    }
+
+    &__pricecompairson {
+      font-size: @copyBody;
+      color: @brandPrimary;
+      align-items: baseline;
+
+      span:empty {
+        display: none;
+      }
+      span {
+        padding-right: 1rem;
+      }
+
+      [data-oldprice] {
+        color: @brandOldPrice;
+        text-decoration: line-through;
+      }
+      [data-savings] {
+        &:before {
+          content: "You save ";
+          color: @brandSecondary;
+        }
+        color: @brandSecondary;
+      }
+      [data-currentprice] {
+        color: @brandPrimary;
+        font-size: @copySale;
+        font-weight: 900;
+
+       
+    }
+        
+      
+    }
+  }
+  //  closes Ecard
+}

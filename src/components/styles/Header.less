@@ -1,0 +1,32 @@
+.header {
+  background: @brandPrimary;
+
+
+  .header, &__title {
+      cursor: pointer;
+    font-size: @copyTitle; 
+    text-align: center;
+    padding-bottom: 0.8rem;
+    font-weight: 300; 
+    background: linear-gradient(
+      to bottom,
+      @brandSecondary 0%,
+      @brandSecondary 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    color: @colorNeutralBright;
+    text-decoration: none;
+    transition: background-size 0.2s;
+
+    &:hover {
+      background-size: 4px 50px;
+      color: @colorNeutralDark;
+    }
+  }
+
+  &__link{
+ color: @colorNeutralBright;
+    }
+}
